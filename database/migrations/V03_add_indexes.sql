@@ -1,0 +1,9 @@
+CREATE INDEX idx_courses_program ON courses(program_id);
+CREATE INDEX idx_sections_course ON sections(course_id);
+CREATE INDEX idx_sections_period ON sections(period_id);
+CREATE INDEX idx_sections_professor ON sections(professor_id);
+CREATE INDEX idx_enrollments_student ON enrollments(student_id);
+CREATE INDEX idx_enrollments_section ON enrollments(section_id);
+CREATE INDEX idx_grades_enrollment ON grades(enrollment_id);
+CREATE INDEX idx_attendance_enrollment ON attendance(enrollment_id);
+CREATE INDEX idx_students_program ON students(program_id);

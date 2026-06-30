@@ -1,0 +1,122 @@
+
+<div id="mer"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+  },
+});
+const { svg } = await mermaid.render('mer-svg', `erDiagram
+  PROGRAMS {
+    bigserial id PK
+    varchar name
+    varchar faculty
+    boolean available
+    timestamp created_at
+  }
+  PERIODS {
+    bigserial id PK
+    varchar code
+    date start_date
+    date end_date
+    boolean active
+  }
+  COURSES {
+    bigserial id PK
+    varchar code
+    varchar name
+    integer credits
+    bigint program_id FK
+    boolean available
+  }
+  PROFESSORS {
+    bigserial id PK
+    varchar full_name
+    varchar email
+    varchar department
+    boolean available
+  }
+  STUDENTS {
+    bigserial id PK
+    varchar student_code
+    varchar full_name
+    varchar email
+    bigint program_id FK
+    varchar status
+    timestamp enrolled_at
+  }
+  SECTIONS {
+    bigserial id PK
+    bigint course_id FK
+    bigint period_id FK
+    bigint professor_id FK
+    varchar group_code
+    integer max_capacity
+  }
+  ENROLLMENTS {
+    bigserial id PK
+    bigint student_id FK
+    bigint section_id FK
+    timestamp enrolled_at
+    decimal final_grade
+    varchar status
+  }
+  GRADES {
+    bigserial id PK
+    bigint enrollment_id FK
+    integer partial_number
+    decimal score
+    timestamp recorded_at
+  }
+  ATTENDANCE {
+    bigserial id PK
+    bigint enrollment_id FK
+    date class_date
+    boolean present
+  }
+
+  PROGRAMS ||--o{ COURSES : "program_id"
+  PROGRAMS ||--o{ STUDENTS : "program_id"
+  COURSES ||--o{ SECTIONS : "course_id"
+  PERIODS ||--o{ SECTIONS : "period_id"
+  PROFESSORS ||--o{ SECTIONS : "professor_id"
+  SECTIONS ||--o{ ENROLLMENTS : "section_id"
+  STUDENTS ||--o{ ENROLLMENTS : "student_id"
+  ENROLLMENTS ||--o{ GRADES : "enrollment_id"
+  ENROLLMENTS ||--o{ ATTENDANCE : "enrollment_id"
+`);
+document.getElementById('mer').innerHTML = svg;
+
+document.querySelectorAll('#mer svg .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+document.querySelectorAll('#mer svg .row-rect-odd path, #mer svg .row-rect-even path').forEach(p => {
+  p.setAttribute('stroke', 'none');
+});
+</script>
