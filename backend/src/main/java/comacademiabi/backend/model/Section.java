@@ -30,8 +30,8 @@ public class Section {
     private Professor professor;
 
     @Column(name = "group_code", nullable = false, length = 20)
-    private String group_code;
+    private String groupCode;
 
     @Column(name = "max_capacity")
-    private Integer max_capacity;
+    private Integer maxCapacity;
 }

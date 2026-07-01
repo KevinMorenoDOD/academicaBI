@@ -20,10 +20,10 @@ public class Student {
     private int id;
 
     @Column(name = "student_code", nullable = false, length = 20)
-    private String student_code;
+    private String studentCode;
 
     @Column(name = "full_name", nullable = false, length = 50)
-    private String full_name;
+    private String fullName;
 
     @Column(name = "email", nullable = false, length = 100)
     private String email;
@@ -36,10 +36,10 @@ public class Student {
     private String status;
 
     @Column(name = "enrolled_at")
-    private LocalDateTime enrolled_at;
+    private LocalDateTime enrolledAt;
 
     @PrePersist
     public void prePersist() {
-        this.enrolled_at = LocalDateTime.now();
+        this.enrolledAt = LocalDateTime.now();
     }
 }

@@ -18,7 +18,7 @@ public class Professor {
     private int id;
 
     @Column(name = "full_name", nullable = false, length = 50)
-    private String full_name;
+    private String fullName;
 
     @Column(name = "email", nullable = false, length = 100)
     private String email;

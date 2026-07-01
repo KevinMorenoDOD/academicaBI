@@ -25,16 +25,16 @@ public class Grade {
     private Enrollment enrollment;
 
     @Column(name = "partial_number", nullable = false)
-    private int partial_number;
+    private int partialNumber;
 
     @Column(name = "score")
     private BigDecimal score;
 
     @Column(name = "recorded_at")
-    private LocalDateTime recorded_at;
+    private LocalDateTime recordedAt;
 
     @PrePersist
     public void prePersist() {
-        this.recorded_at = LocalDateTime.now();
+        this.recordedAt = LocalDateTime.now();
     }
 }
