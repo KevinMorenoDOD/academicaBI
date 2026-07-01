@@ -24,7 +24,7 @@ public class Attendance {
     private Enrollment enrollment;
 
     @Column(name = "class_date")
-    private LocalDate class_date;
+    private LocalDate classDate;
 
     @Column(name = "present")
     private Boolean present;

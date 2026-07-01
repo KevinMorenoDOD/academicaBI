@@ -23,10 +23,10 @@ public class Period {
     private String code;
 
     @Column(name = "start_date")
-    private LocalDate start_date;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private LocalDate end_date;
+    private LocalDate endDate;
 
     @Column(name = "active", nullable = false)
     private boolean active;

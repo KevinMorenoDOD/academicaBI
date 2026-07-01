@@ -29,16 +29,16 @@ public class Enrollment {
     private Section section;
 
     @Column(name = "enrolled_at")
-    private LocalDateTime enrolled_at;
+    private LocalDateTime enrolledAt;
 
     @Column(name = "final_grade")
-    private BigDecimal final_grade;
+    private BigDecimal finalGrade;
 
     @Column(name = "status", length = 20)
     private String status;
 
     @PrePersist
     public void prePersist() {
-        this.enrolled_at = LocalDateTime.now();
+        this.enrolledAt = LocalDateTime.now();
     }
 }
