@@ -36,8 +36,8 @@ public class StudentService {
     public Student updateStudent(Student student) {
         Student studentUpdated = studentRepository.findById(student.getId()).orElseThrow(() -> new RuntimeException("student not found by id: " + student.getId()));
 
-        studentUpdated.setStudent_code(student.getStudent_code());
-        studentUpdated.setFull_name(student.getFull_name());
+        studentUpdated.setStudentCode(student.getStudentCode());
+        studentUpdated.setFullName(student.getFullName());
         studentUpdated.setEmail(student.getEmail());
         studentUpdated.setProgram(student.getProgram());
         Student saved = studentRepository.save(studentUpdated);

@@ -26,7 +26,7 @@ public class AttendanceService {
     public Attendance updateAttendance(Attendance attendance) {
         Attendance attendanceUpdated = attendanceRepository.findById(attendance.getId()).orElseThrow(() -> new RuntimeException("attendance not found by id: " + attendance.getId()));
 
-        attendanceUpdated.setClass_date(attendance.getClass_date());
+        attendanceUpdated.setClassDate(attendance.getClassDate());
         attendanceUpdated.setPresent(attendance.getPresent());
         Attendance saved = attendanceRepository.save(attendanceUpdated);
 

@@ -29,8 +29,8 @@ public class SectionService {
         sectionUpdated.setCourse(section.getCourse());
         sectionUpdated.setPeriod(section.getPeriod());
         sectionUpdated.setProfessor(section.getProfessor());
-        sectionUpdated.setGroup_code(section.getGroup_code());
-        sectionUpdated.setMax_capacity(section.getMax_capacity());
+        sectionUpdated.setGroupCode(section.getGroupCode());
+        sectionUpdated.setMaxCapacity(section.getMaxCapacity());
         Section saved = sectionRepository.save(sectionUpdated);
 
         return saved;

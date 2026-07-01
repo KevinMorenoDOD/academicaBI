@@ -22,12 +22,32 @@ public class ProgramController {
 
     @GetMapping
     public ResponseEntity<List<Program>> getAllPrograms() {
-        return ResponseEntity.ok(programService.getProgramById())
+        return ResponseEntity.ok(programService.getAllPrograms());
+    }
+
+    @GetMapping("/id/{programId}")
+    public ResponseEntity<Program> getProgramById(@PathVariable int programId) {
+        return ResponseEntity.ok(programService.getProgramById(programId));
+    }
+
+    @GetMapping("name/{programName}")
+    public ResponseEntity<Program> getProgramByName(@PathVariable String programName) {
+        return ResponseEntity.ok(programService.getProgramByName(programName));
     }
 
     @PostMapping
     public ResponseEntity<Program> createProgram(@RequestBody Program program){
         return ResponseEntity.ok(programService.createProgram(program));
+    }
+
+    @PutMapping
+    public ResponseEntity<Program> updateProgram(@RequestBody Program program){
+        return ResponseEntity.ok(programService.updateProgram(program));
+    }
+
+    @PatchMapping("unavailable/{programId}")
+    public ResponseEntity<Program> patchProgram(@PathVariable int programId){
+        return ResponseEntity.ok(programService.unavailableProgram(programId));
     }
 
 

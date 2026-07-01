@@ -27,8 +27,8 @@ public class PeriodService {
         Period periodUpdated = periodRepository.findById(period.getId()).orElseThrow(() -> new RuntimeException("period not found by id: " + period.getId()));
 
         periodUpdated.setCode(period.getCode());
-        periodUpdated.setStart_date(period.getStart_date());
-        periodUpdated.setEnd_date(period.getEnd_date());
+        periodUpdated.setStartDate(period.getStartDate());
+        periodUpdated.setEndDate(period.getEndDate());
         Period saved = periodRepository.save(periodUpdated);
 
         return saved;

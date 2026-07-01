@@ -26,7 +26,7 @@ public class EnrollmentService {
     public Enrollment updateEnrollment(Enrollment enrollment) {
         Enrollment enrollmentUpdated = enrollmentRepository.findById(enrollment.getId()).orElseThrow(() -> new RuntimeException("enrollment not found by id: " + enrollment.getId()));
 
-        enrollmentUpdated.setFinal_grade(enrollment.getFinal_grade());
+        enrollmentUpdated.setFinalGrade(enrollment.getFinalGrade());
         enrollmentUpdated.setStatus(enrollment.getStatus());
         Enrollment saved = enrollmentRepository.save(enrollmentUpdated);
 

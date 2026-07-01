@@ -31,7 +31,7 @@ public class ProfessorService {
     public Professor updateProfessor(Professor professor) {
         Professor professorUpdated = professorRepository.findById(professor.getId()).orElseThrow(() -> new RuntimeException("professor not found by id: " + professor.getId()));
 
-        professorUpdated.setFull_name(professor.getFull_name());
+        professorUpdated.setFullName(professor.getFullName());
         professorUpdated.setEmail(professor.getEmail());
         professorUpdated.setDepartment(professor.getDepartment());
         Professor saved = professorRepository.save(professorUpdated);

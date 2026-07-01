@@ -26,7 +26,7 @@ public class GradeService {
     public Grade updateGrade(Grade grade) {
         Grade gradeUpdated = gradeRepository.findById(grade.getId()).orElseThrow(() -> new RuntimeException("grade not found by id: " + grade.getId()));
 
-        gradeUpdated.setPartial_number(grade.getPartial_number());
+        gradeUpdated.setPartialNumber(grade.getPartialNumber());
         gradeUpdated.setScore(grade.getScore());
         Grade saved = gradeRepository.save(gradeUpdated);
 
