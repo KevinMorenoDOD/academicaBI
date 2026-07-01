@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Program;
 import comacademiabi.backend.repository.ProgramRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProgramService {
 
@@ -16,6 +18,11 @@ public class ProgramService {
     public Program createProgram(Program program) {
         Program saved = programRepository.save(program);
         return saved;
+    }
+
+    public List<Program> getAllPrograms() {
+        List<Program> program = programRepository.findAll();
+        return program;
     }
 
     public Program getProgramById(int id) {
