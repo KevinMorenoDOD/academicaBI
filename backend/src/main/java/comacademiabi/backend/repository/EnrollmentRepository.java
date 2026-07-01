@@ -7,12 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EnrollmentRepository extends JpaRepository<Enrollment, Integer> {
-
     List<Enrollment> findByStudent_Id(Integer studentId);
-
     List<Enrollment> findBySection_Id(Integer sectionId);
-
     Optional<Enrollment> findByStudent_IdAndSection_Id(Integer studentId, Integer sectionId);
-
     List<Enrollment> findByStatus(String status);
 }

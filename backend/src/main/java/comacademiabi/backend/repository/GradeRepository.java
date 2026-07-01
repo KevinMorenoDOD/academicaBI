@@ -8,6 +8,5 @@ import java.util.List;
 public interface GradeRepository extends JpaRepository<Grade, Integer> {
 
     List<Grade> findByEnrollment_Id(Integer enrollmentId);
-
     List<Grade> findByEnrollment_IdOrderByPartialNumberAsc(Integer enrollmentId);
 }
