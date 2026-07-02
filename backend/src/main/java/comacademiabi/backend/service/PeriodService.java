@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Period;
 import comacademiabi.backend.repository.PeriodRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PeriodService {
 
@@ -11,6 +13,10 @@ public class PeriodService {
 
     public PeriodService(PeriodRepository periodRepository) {
         this.periodRepository = periodRepository;
+    }
+
+    public List<Period> getAllPeriods() {
+        return periodRepository.findAll();
     }
 
     public Period createPeriod(Period period) {

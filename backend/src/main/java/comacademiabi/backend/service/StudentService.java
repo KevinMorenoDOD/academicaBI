@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Student;
 import comacademiabi.backend.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -11,6 +13,10 @@ public class StudentService {
 
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 
     public Student createStudent(Student student) {
