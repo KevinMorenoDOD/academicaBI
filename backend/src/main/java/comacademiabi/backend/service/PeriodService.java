@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Period;
 import comacademiabi.backend.repository.PeriodRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PeriodService {
 
@@ -11,6 +13,10 @@ public class PeriodService {
 
     public PeriodService(PeriodRepository periodRepository) {
         this.periodRepository = periodRepository;
+    }
+
+    public List<Period> getAllPeriods() {
+        return periodRepository.findAll();
     }
 
     public Period createPeriod(Period period) {
@@ -27,8 +33,8 @@ public class PeriodService {
         Period periodUpdated = periodRepository.findById(period.getId()).orElseThrow(() -> new RuntimeException("period not found by id: " + period.getId()));
 
         periodUpdated.setCode(period.getCode());
-        periodUpdated.setStart_date(period.getStart_date());
-        periodUpdated.setEnd_date(period.getEnd_date());
+        periodUpdated.setStartDate(period.getStartDate());
+        periodUpdated.setEndDate(period.getEndDate());
         Period saved = periodRepository.save(periodUpdated);
 
         return saved;

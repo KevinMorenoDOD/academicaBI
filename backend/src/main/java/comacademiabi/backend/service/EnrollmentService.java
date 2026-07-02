@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Enrollment;
 import comacademiabi.backend.repository.EnrollmentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EnrollmentService {
 
@@ -11,6 +13,10 @@ public class EnrollmentService {
 
     public EnrollmentService(EnrollmentRepository enrollmentRepository) {
         this.enrollmentRepository = enrollmentRepository;
+    }
+
+    public List<Enrollment> getAllEnrollments() {
+        return enrollmentRepository.findAll();
     }
 
     public Enrollment createEnrollment(Enrollment enrollment) {
@@ -26,7 +32,7 @@ public class EnrollmentService {
     public Enrollment updateEnrollment(Enrollment enrollment) {
         Enrollment enrollmentUpdated = enrollmentRepository.findById(enrollment.getId()).orElseThrow(() -> new RuntimeException("enrollment not found by id: " + enrollment.getId()));
 
-        enrollmentUpdated.setFinal_grade(enrollment.getFinal_grade());
+        enrollmentUpdated.setFinalGrade(enrollment.getFinalGrade());
         enrollmentUpdated.setStatus(enrollment.getStatus());
         Enrollment saved = enrollmentRepository.save(enrollmentUpdated);
 

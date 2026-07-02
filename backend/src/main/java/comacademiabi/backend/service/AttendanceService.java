@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Attendance;
 import comacademiabi.backend.repository.AttendanceRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AttendanceService {
 
@@ -11,6 +13,10 @@ public class AttendanceService {
 
     public AttendanceService(AttendanceRepository attendanceRepository) {
         this.attendanceRepository = attendanceRepository;
+    }
+
+    public List<Attendance> getAllAttendances() {
+        return attendanceRepository.findAll();
     }
 
     public Attendance createAttendance(Attendance attendance) {
@@ -26,7 +32,7 @@ public class AttendanceService {
     public Attendance updateAttendance(Attendance attendance) {
         Attendance attendanceUpdated = attendanceRepository.findById(attendance.getId()).orElseThrow(() -> new RuntimeException("attendance not found by id: " + attendance.getId()));
 
-        attendanceUpdated.setClass_date(attendance.getClass_date());
+        attendanceUpdated.setClassDate(attendance.getClassDate());
         attendanceUpdated.setPresent(attendance.getPresent());
         Attendance saved = attendanceRepository.save(attendanceUpdated);
 

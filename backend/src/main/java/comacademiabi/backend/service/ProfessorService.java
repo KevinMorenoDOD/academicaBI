@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Professor;
 import comacademiabi.backend.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProfessorService {
 
@@ -11,6 +13,10 @@ public class ProfessorService {
 
     public ProfessorService(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
+    }
+
+    public List<Professor> getAllProfessors() {
+        return professorRepository.findAll();
     }
 
     public Professor createProfessor(Professor professor) {
@@ -31,7 +37,7 @@ public class ProfessorService {
     public Professor updateProfessor(Professor professor) {
         Professor professorUpdated = professorRepository.findById(professor.getId()).orElseThrow(() -> new RuntimeException("professor not found by id: " + professor.getId()));
 
-        professorUpdated.setFull_name(professor.getFull_name());
+        professorUpdated.setFullName(professor.getFullName());
         professorUpdated.setEmail(professor.getEmail());
         professorUpdated.setDepartment(professor.getDepartment());
         Professor saved = professorRepository.save(professorUpdated);

@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Student;
 import comacademiabi.backend.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -11,6 +13,10 @@ public class StudentService {
 
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 
     public Student createStudent(Student student) {
@@ -36,8 +42,8 @@ public class StudentService {
     public Student updateStudent(Student student) {
         Student studentUpdated = studentRepository.findById(student.getId()).orElseThrow(() -> new RuntimeException("student not found by id: " + student.getId()));
 
-        studentUpdated.setStudent_code(student.getStudent_code());
-        studentUpdated.setFull_name(student.getFull_name());
+        studentUpdated.setStudentCode(student.getStudentCode());
+        studentUpdated.setFullName(student.getFullName());
         studentUpdated.setEmail(student.getEmail());
         studentUpdated.setProgram(student.getProgram());
         Student saved = studentRepository.save(studentUpdated);

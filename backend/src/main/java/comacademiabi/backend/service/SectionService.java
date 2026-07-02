@@ -4,6 +4,8 @@ import comacademiabi.backend.model.Section;
 import comacademiabi.backend.repository.SectionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SectionService {
 
@@ -11,6 +13,10 @@ public class SectionService {
 
     public SectionService(SectionRepository sectionRepository) {
         this.sectionRepository = sectionRepository;
+    }
+
+    public List<Section> getAllSections() {
+        return sectionRepository.findAll();
     }
 
     public Section createSection(Section section) {
@@ -29,8 +35,8 @@ public class SectionService {
         sectionUpdated.setCourse(section.getCourse());
         sectionUpdated.setPeriod(section.getPeriod());
         sectionUpdated.setProfessor(section.getProfessor());
-        sectionUpdated.setGroup_code(section.getGroup_code());
-        sectionUpdated.setMax_capacity(section.getMax_capacity());
+        sectionUpdated.setGroupCode(section.getGroupCode());
+        sectionUpdated.setMaxCapacity(section.getMaxCapacity());
         Section saved = sectionRepository.save(sectionUpdated);
 
         return saved;
