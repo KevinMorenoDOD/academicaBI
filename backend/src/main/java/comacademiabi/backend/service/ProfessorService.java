@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Professor;
 import comacademiabi.backend.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
@@ -25,17 +26,17 @@ public class ProfessorService {
     }
 
     public Professor getProfessorById(int id) {
-        Professor professor = professorRepository.findById(id).orElseThrow(() -> new RuntimeException("professor not found by id: " + id));
+        Professor professor = professorRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("professor not found by id: " + id));
         return professor;
     }
 
     public Professor getProfessorByEmail(String email) {
-        Professor professor = professorRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("professor not found by email: " + email));
+        Professor professor = professorRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("professor not found by email: " + email));
         return professor;
     }
 
     public Professor updateProfessor(Professor professor) {
-        Professor professorUpdated = professorRepository.findById(professor.getId()).orElseThrow(() -> new RuntimeException("professor not found by id: " + professor.getId()));
+        Professor professorUpdated = professorRepository.findById(professor.getId()).orElseThrow(() -> new ResourceNotFoundException("professor not found by id: " + professor.getId()));
 
         professorUpdated.setFullName(professor.getFullName());
         professorUpdated.setEmail(professor.getEmail());
@@ -46,7 +47,7 @@ public class ProfessorService {
     }
 
     public Professor unavailableProfessor(int id) {
-        Professor professorUpdated = professorRepository.findById(id).orElseThrow(() -> new RuntimeException("professor not found by id: " + id));
+        Professor professorUpdated = professorRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("professor not found by id: " + id));
 
         professorUpdated.setAvailable(false);
         Professor saved = professorRepository.save(professorUpdated);

@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Grade;
 import comacademiabi.backend.repository.GradeRepository;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,12 @@ public class GradeService {
     }
 
     public Grade getGradeById(int id) {
-        Grade grade = gradeRepository.findById(id).orElseThrow(() -> new RuntimeException("grade not found by id: " + id));
+        Grade grade = gradeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("grade not found by id: " + id));
         return grade;
     }
 
     public Grade updateGrade(Grade grade) {
-        Grade gradeUpdated = gradeRepository.findById(grade.getId()).orElseThrow(() -> new RuntimeException("grade not found by id: " + grade.getId()));
+        Grade gradeUpdated = gradeRepository.findById(grade.getId()).orElseThrow(() -> new ResourceNotFoundException("grade not found by id: " + grade.getId()));
 
         gradeUpdated.setPartialNumber(grade.getPartialNumber());
         gradeUpdated.setScore(grade.getScore());

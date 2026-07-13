@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Student;
 import comacademiabi.backend.repository.StudentRepository;
 import org.springframework.stereotype.Service;
@@ -25,22 +26,22 @@ public class StudentService {
     }
 
     public Student getStudentById(int id) {
-        Student student = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("student not found by id: " + id));
+        Student student = studentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("student not found by id: " + id));
         return student;
     }
 
     public Student getStudentByStudentCode(String studentCode) {
-        Student student = studentRepository.findByStudentCode(studentCode).orElseThrow(() -> new RuntimeException("student not found by student code: " + studentCode));
+        Student student = studentRepository.findByStudentCode(studentCode).orElseThrow(() -> new ResourceNotFoundException("student not found by student code: " + studentCode));
         return student;
     }
 
     public Student getStudentByEmail(String email) {
-        Student student = studentRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("student not found by email: " + email));
+        Student student = studentRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("student not found by email: " + email));
         return student;
     }
 
     public Student updateStudent(Student student) {
-        Student studentUpdated = studentRepository.findById(student.getId()).orElseThrow(() -> new RuntimeException("student not found by id: " + student.getId()));
+        Student studentUpdated = studentRepository.findById(student.getId()).orElseThrow(() -> new ResourceNotFoundException("student not found by id: " + student.getId()));
 
         studentUpdated.setStudentCode(student.getStudentCode());
         studentUpdated.setFullName(student.getFullName());
@@ -52,7 +53,7 @@ public class StudentService {
     }
 
     public Student dropoutStudent(int id) {
-        Student studentUpdated = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("student not found by id: " + id));
+        Student studentUpdated = studentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("student not found by id: " + id));
 
         studentUpdated.setStatus("dropout");
         Student saved = studentRepository.save(studentUpdated);

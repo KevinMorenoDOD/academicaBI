@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Section;
 import comacademiabi.backend.repository.SectionRepository;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,12 @@ public class SectionService {
     }
 
     public Section getSectionById(int id) {
-        Section section = sectionRepository.findById(id).orElseThrow(() -> new RuntimeException("section not found by id: " + id));
+        Section section = sectionRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("section not found by id: " + id));
         return section;
     }
 
     public Section updateSection(Section section) {
-        Section sectionUpdated = sectionRepository.findById(section.getId()).orElseThrow(() -> new RuntimeException("section not found by id: " + section.getId()));
+        Section sectionUpdated = sectionRepository.findById(section.getId()).orElseThrow(() -> new ResourceNotFoundException("section not found by id: " + section.getId()));
 
         sectionUpdated.setCourse(section.getCourse());
         sectionUpdated.setPeriod(section.getPeriod());

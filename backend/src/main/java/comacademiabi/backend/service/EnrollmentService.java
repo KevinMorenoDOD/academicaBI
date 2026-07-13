@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Enrollment;
 import comacademiabi.backend.repository.EnrollmentRepository;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,12 @@ public class EnrollmentService {
     }
 
     public Enrollment getEnrollmentById(int id) {
-        Enrollment enrollment = enrollmentRepository.findById(id).orElseThrow(() -> new RuntimeException("enrollment not found by id: " + id));
+        Enrollment enrollment = enrollmentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("enrollment not found by id: " + id));
         return enrollment;
     }
 
     public Enrollment updateEnrollment(Enrollment enrollment) {
-        Enrollment enrollmentUpdated = enrollmentRepository.findById(enrollment.getId()).orElseThrow(() -> new RuntimeException("enrollment not found by id: " + enrollment.getId()));
+        Enrollment enrollmentUpdated = enrollmentRepository.findById(enrollment.getId()).orElseThrow(() -> new ResourceNotFoundException("enrollment not found by id: " + enrollment.getId()));
 
         enrollmentUpdated.setFinalGrade(enrollment.getFinalGrade());
         enrollmentUpdated.setStatus(enrollment.getStatus());
@@ -40,7 +41,7 @@ public class EnrollmentService {
     }
 
     public Enrollment withdrawEnrollment(int id) {
-        Enrollment enrollmentUpdated = enrollmentRepository.findById(id).orElseThrow(() -> new RuntimeException("enrollment not found by id: " + id));
+        Enrollment enrollmentUpdated = enrollmentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("enrollment not found by id: " + id));
 
         enrollmentUpdated.setStatus("withdrawn");
         Enrollment saved = enrollmentRepository.save(enrollmentUpdated);

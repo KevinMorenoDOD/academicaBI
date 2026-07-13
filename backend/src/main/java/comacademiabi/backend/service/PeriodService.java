@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Period;
 import comacademiabi.backend.repository.PeriodRepository;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,12 @@ public class PeriodService {
     }
 
     public Period getPeriodById(int id) {
-        Period period = periodRepository.findById(id).orElseThrow(() -> new RuntimeException("period not found by id: " + id));
+        Period period = periodRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("period not found by id: " + id));
         return period;
     }
 
     public Period updatePeriod(Period period) {
-        Period periodUpdated = periodRepository.findById(period.getId()).orElseThrow(() -> new RuntimeException("period not found by id: " + period.getId()));
+        Period periodUpdated = periodRepository.findById(period.getId()).orElseThrow(() -> new ResourceNotFoundException("period not found by id: " + period.getId()));
 
         periodUpdated.setCode(period.getCode());
         periodUpdated.setStartDate(period.getStartDate());
@@ -41,7 +42,7 @@ public class PeriodService {
     }
 
     public Period unavailablePeriod(int id) {
-        Period periodUpdated = periodRepository.findById(id).orElseThrow(() -> new RuntimeException("period not found by id: " + id));
+        Period periodUpdated = periodRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("period not found by id: " + id));
 
         periodUpdated.setActive(false);
         Period saved = periodRepository.save(periodUpdated);

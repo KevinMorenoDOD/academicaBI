@@ -1,5 +1,6 @@
 package comacademiabi.backend.service;
 
+import comacademiabi.backend.exception.ResourceNotFoundException;
 import comacademiabi.backend.model.Attendance;
 import comacademiabi.backend.repository.AttendanceRepository;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,12 @@ public class AttendanceService {
     }
 
     public Attendance getAttendanceById(int id) {
-        Attendance attendance = attendanceRepository.findById(id).orElseThrow(() -> new RuntimeException("attendance not found by id: " + id));
+        Attendance attendance = attendanceRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("attendance not found by id: " + id));
         return attendance;
     }
 
     public Attendance updateAttendance(Attendance attendance) {
-        Attendance attendanceUpdated = attendanceRepository.findById(attendance.getId()).orElseThrow(() -> new RuntimeException("attendance not found by id: " + attendance.getId()));
+        Attendance attendanceUpdated = attendanceRepository.findById(attendance.getId()).orElseThrow(() -> new ResourceNotFoundException("attendance not found by id: " + attendance.getId()));
 
         attendanceUpdated.setClassDate(attendance.getClassDate());
         attendanceUpdated.setPresent(attendance.getPresent());

@@ -1,0 +1,282 @@
+{
+  ".vscode/settings.json": {
+    "mtime": 1783047636.5549295,
+    "ast_hash": "0bdccf3f74ca242511bb4114b3b44bfd",
+    "semantic_hash": ""
+  },
+  "_ast_extract.py": {
+    "mtime": 1783903541.075493,
+    "ast_hash": "9f41f517da24495571cdcae502cb44b4",
+    "semantic_hash": ""
+  },
+  "_semantic_extract.py": {
+    "mtime": 1783903575.342101,
+    "ast_hash": "f1ad59b75829fc510ce4381aff93e51d",
+    "semantic_hash": ""
+  },
+  "backend/mvnw": {
+    "mtime": 1783047636.5609307,
+    "ast_hash": "ab50dd89da7da2346b28003352eeeeeb",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/BackendApplication.java": {
+    "mtime": 1783047636.5650365,
+    "ast_hash": "9d59dc167536453de6389a3f3b530ee6",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/AttendanceController.java": {
+    "mtime": 1783047636.567034,
+    "ast_hash": "213fc14ed717e904b9a49c890c9f0f4c",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/CourseController.java": {
+    "mtime": 1783047636.5680346,
+    "ast_hash": "24402847ee6f5297b244e0d2385d53e4",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/EnrollmentController.java": {
+    "mtime": 1783047636.5700307,
+    "ast_hash": "004f581b5be41176bd284eaab5766fe7",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/GradeController.java": {
+    "mtime": 1783047636.5710354,
+    "ast_hash": "9dec072f164fe34a19278991fa26e90d",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/PeriodController.java": {
+    "mtime": 1783047636.5720327,
+    "ast_hash": "39b9f265443a2e4ad752a0dbd4cfa155",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/ProfessorController.java": {
+    "mtime": 1783047636.574042,
+    "ast_hash": "db29632aa5f77febf38b7f082fba4658",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/ProgramController.java": {
+    "mtime": 1783047636.5760367,
+    "ast_hash": "ca479f477bf123b6575783f116040cab",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/SectionController.java": {
+    "mtime": 1783047636.5770354,
+    "ast_hash": "bc52611433d7cc8465d990ef162442af",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/controller/StudentController.java": {
+    "mtime": 1783047636.5780356,
+    "ast_hash": "7e18ea25ec9bc24cbdc42551f91f7098",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/dto/ErrorResponse.java": {
+    "mtime": 1783047636.5800366,
+    "ast_hash": "72e9a9729dd55bb5a7d46792f190c4e9",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/exception/GlobalExceptionHandler.java": {
+    "mtime": 1783047636.5810342,
+    "ast_hash": "3327b070731de5f54b9e38720129347b",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/exception/ResourceNotFoundException.java": {
+    "mtime": 1783047636.5840354,
+    "ast_hash": "7df7ac13abbbc7d629aca9cf92772b1b",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Attendance.java": {
+    "mtime": 1783047636.5860357,
+    "ast_hash": "918fa0a4dff67024c6b27cad742368a8",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Course.java": {
+    "mtime": 1783047636.5870345,
+    "ast_hash": "8217c632faf67ea2d7fcebe34a055321",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Enrollment.java": {
+    "mtime": 1783047636.588034,
+    "ast_hash": "ee590c4def6bd84fbac50685def9132e",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Grade.java": {
+    "mtime": 1783047636.592042,
+    "ast_hash": "e6c3219f1f7b8d0e5f0e6f8d84e4a322",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Period.java": {
+    "mtime": 1783047636.5930328,
+    "ast_hash": "b10efb77b8943b10342993265d7181b0",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Professor.java": {
+    "mtime": 1783047636.594036,
+    "ast_hash": "f5cd1af836ec246c5d7538df7bc070cc",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Program.java": {
+    "mtime": 1783047636.595037,
+    "ast_hash": "26d45c00fcb2e234153ba31d5d0a455a",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Section.java": {
+    "mtime": 1783047636.5960388,
+    "ast_hash": "f3b8e56e7f2ea74e99c926759b201154",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/Student.java": {
+    "mtime": 1783047636.5975838,
+    "ast_hash": "28bb3c7b5deb42a6179c7e1e5d504b8d",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/enums/EnrollmentStatus.java": {
+    "mtime": 1783047636.598585,
+    "ast_hash": "5ba89bd08e03143924ce658b61faa7a7",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/model/enums/StudentStatus.java": {
+    "mtime": 1783047636.5995848,
+    "ast_hash": "47458431b86bb640d1f4bda0bebd2b03",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/AttendanceRepository.java": {
+    "mtime": 1783047636.6015878,
+    "ast_hash": "a25f7770ff2b51814b226e9796080164",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/CourseRepository.java": {
+    "mtime": 1783047636.6101322,
+    "ast_hash": "459f3717107a0a8975351be23f329e9b",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/EnrollmentRepository.java": {
+    "mtime": 1783047636.6161273,
+    "ast_hash": "ac8beb335882cd091dbaf19881674acf",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/GradeRepository.java": {
+    "mtime": 1783047636.6201267,
+    "ast_hash": "b9b0513e6591dc695b280acb8dbb9b4c",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/PeriodRepository.java": {
+    "mtime": 1783047636.6231282,
+    "ast_hash": "c2ae0cffd1a53e6fd89cbe8ec8d8d1cc",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/ProfessorRepository.java": {
+    "mtime": 1783047636.6251273,
+    "ast_hash": "ccb3c3f639db5d0a138cf56f8c06a8ab",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/ProgramRepository.java": {
+    "mtime": 1783047636.6261303,
+    "ast_hash": "8ca3cdada28e944f2aa19cda681f0434",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/SectionRepository.java": {
+    "mtime": 1783047636.63013,
+    "ast_hash": "eff26cba3eb86df46635354b4dc037e4",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/repository/StudentRepository.java": {
+    "mtime": 1783047636.6321273,
+    "ast_hash": "5a4680ed4d90669cdaba13ecb399911d",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/AttendanceService.java": {
+    "mtime": 1783047636.635134,
+    "ast_hash": "b89836dccdf655b5163ced244aa98b46",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/CourseService.java": {
+    "mtime": 1783047636.637132,
+    "ast_hash": "a28e0840da014ffed37cd881eaa384b7",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/EnrollmentService.java": {
+    "mtime": 1783047636.6391263,
+    "ast_hash": "aeaace3c546b2a575af954d15c6e5ca8",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/GradeService.java": {
+    "mtime": 1783047636.640131,
+    "ast_hash": "78101d14957d0d5d89228d29e55d352c",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/PeriodService.java": {
+    "mtime": 1783047636.6411304,
+    "ast_hash": "25038191ae0bf119dd3d7e516d1c6d3e",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/ProfessorService.java": {
+    "mtime": 1783047636.6421323,
+    "ast_hash": "ca4490e7de28b9f0ed05c68ab0d1b980",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/ProgramService.java": {
+    "mtime": 1783047636.6441295,
+    "ast_hash": "9b5926891646211f5e136190689e6a8b",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/SectionService.java": {
+    "mtime": 1783047636.646126,
+    "ast_hash": "57d5e90ea4c81431efe9f2bbac7c0de7",
+    "semantic_hash": ""
+  },
+  "backend/src/main/java/comacademiabi/backend/service/StudentService.java": {
+    "mtime": 1783047636.649128,
+    "ast_hash": "833e8c1844d4186ae1948cb7c0ee17f4",
+    "semantic_hash": ""
+  },
+  "backend/src/test/java/comacademiabi/backend/BackendApplicationTests.java": {
+    "mtime": 1783047636.6651247,
+    "ast_hash": "63652efe4962f7eb3ce20f42a368d323",
+    "semantic_hash": ""
+  },
+  "database/migrations/V01_create_enums.sql": {
+    "mtime": 1783044798.8981159,
+    "ast_hash": "1b595e4e6da797f1702328bd58201cde",
+    "semantic_hash": ""
+  },
+  "database/migrations/V02_create_schema.sql": {
+    "mtime": 1783044798.9031162,
+    "ast_hash": "d91d2167c3f4594cb60457986acd985a",
+    "semantic_hash": ""
+  },
+  "database/migrations/V03_add_indexes.sql": {
+    "mtime": 1783044798.9126678,
+    "ast_hash": "4c8d576b384dd7f1a229d68502fea937",
+    "semantic_hash": ""
+  },
+  "database/migrations/V04_add_capacity_trigger.sql": {
+    "mtime": 1783044798.9136684,
+    "ast_hash": "243f914740edadae97c2c19e75d71eeb",
+    "semantic_hash": ""
+  },
+  "database/seeds/V05_seed_data.sql": {
+    "mtime": 1783047608.9246542,
+    "ast_hash": "53b843085e496ed51afd03335dbe2d64",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1782935631.2124004,
+    "ast_hash": "7bc6e9864cd04608a759357abfd135a9",
+    "semantic_hash": ""
+  },
+  "backend/HELP.md": {
+    "mtime": 1782845149.8229682,
+    "ast_hash": "24f36865fdab1614915154d276979ef6",
+    "semantic_hash": ""
+  },
+  "database/README.md": {
+    "mtime": 1783047453.0838335,
+    "ast_hash": "d39e28636758cab678b808b327f35cd5",
+    "semantic_hash": ""
+  },
+  "database/diagrams/mer_diagram.html": {
+    "mtime": 1783044798.8961189,
+    "ast_hash": "be06bf21d044b55addf43e1c11f22763",
+    "semantic_hash": ""
+  }
+}
